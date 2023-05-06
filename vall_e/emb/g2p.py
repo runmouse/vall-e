@@ -46,7 +46,7 @@ def main():
         phones = encode(graphs)
         with open(phone_path, "w") as f:
             f.write(" ".join(phones))
-        print ("save %s" % (phone_path))
+        print ("read %s , save %s" % (path, phone_path))
 
 
 if __name__ == "__main__":
