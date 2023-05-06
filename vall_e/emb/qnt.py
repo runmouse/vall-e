@@ -89,6 +89,7 @@ def main():
             continue
         qnt = encode_from_file(path)
         torch.save(qnt.cpu(), out_path)
+        print ("save %s" % (out_path))
 
 
 if __name__ == "__main__":
