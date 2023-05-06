@@ -30,6 +30,7 @@ def encode(graphs: str) -> list[str]:
 
 @torch.no_grad()
 def main():
+    print ("g2p")
     parser = argparse.ArgumentParser()
     parser.add_argument("folder", type=Path)
     parser.add_argument("--suffix", type=str, default=".normalized.txt")
@@ -40,13 +41,14 @@ def main():
 
     for path in tqdm(paths):
         phone_path = path.with_name(path.stem.split(".")[0] + ".phn.txt")
+        print ("read %s , save %s" % (path, phone_path))
         if phone_path.exists():
+            print ("exists")
             continue
         graphs = _get_graphs(path)
         phones = encode(graphs)
         with open(phone_path, "w") as f:
             f.write(" ".join(phones))
-        print ("read %s , save %s" % (path, phone_path))
 
 
 if __name__ == "__main__":
