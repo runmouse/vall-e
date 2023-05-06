@@ -46,7 +46,7 @@ setup(
         "g2p_en>=2.1.0",
         "humanize>=4.4.0",
         "matplotlib>=3.6.0",
-        "numpy>=1.23.3",
+        "numpy==1.23.3",
         "omegaconf>=2.2.3",
         "openTSNE>=0.6.2",
         "pandas>=1.5.0",
